@@ -153,16 +153,16 @@ public class ExpressionPredicateConverter<T extends DataEntry, C extends Context
                                 as = ResolvedExpression::asString;
                                 break;
                             case LONG:
-                                as = ResolvedExpression::asString;
+                                as = ResolvedExpression::asLong;
                                 break;
                             case DOUBLE:
-                                as = ResolvedExpression::asString;
+                                as = ResolvedExpression::asDouble;
                                 break;
                             case DATETIME:
-                                as = ResolvedExpression::asString;
+                                as = ResolvedExpression::asLocalDateTime;
                                 break;
                             case BOOLEAN:
-                                as = ResolvedExpression::asString;
+                                as = ResolvedExpression::asBoolean;
                                 break;
                             default:
                                 throw new IllegalArgumentException();
