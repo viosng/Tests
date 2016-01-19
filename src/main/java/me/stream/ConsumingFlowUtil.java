@@ -92,7 +92,9 @@ public class ConsumingFlowUtil {
 
             @Override
             public boolean tryAdvance(Consumer<? super T> action) {
-                if (finish && queue.isEmpty() )return false;
+                if (finish && queue.isEmpty()) {
+                    return false;
+                }
                 try {
                     action.accept(queue.take());
                 } catch (InterruptedException e) {
