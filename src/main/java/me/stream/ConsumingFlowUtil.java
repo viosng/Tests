@@ -77,8 +77,8 @@ public class ConsumingFlowUtil {
     public static <T> ConsumingSpliterator<T> consumingSpliterator() {
         return new ConsumingSpliterator<T>(){
 
-            protected final LinkedBlockingQueue<T> queue = new LinkedBlockingQueue<>();
-            protected volatile boolean finish;
+            private final LinkedBlockingQueue<T> queue = new LinkedBlockingQueue<>();
+            private volatile boolean finish;
 
             @Override
             public void accept(T t) {
