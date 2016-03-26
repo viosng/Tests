@@ -1,6 +1,5 @@
 package me.ast.expressions.predicates;
 
-import com.google.common.collect.ImmutableSet;
 import me.ast.DataEntry;
 import me.ast.expressions.*;
 import me.ast.expressions.Expression.ExpressionType;
@@ -12,11 +11,8 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.toList;
 
 /**
  * Created by viosn_000 on 19.01.2016.
@@ -35,10 +31,10 @@ public class ExpressionPredicateConverter<T extends DataEntry, C extends Context
                 return convertFunctionExpression((FunctionExpression) expression, context, dataEntrySupplier);
             case CONSTANT:
                 return convertConstantExpression((ConstantExpression) expression, context);
-            case CONTAINER:
+            /*case CONTAINER:
                 break;
             case BINARY_OPERATION:
-                break;
+                break;*/
             case UNARY_OPERATION:
                 return convertUnaryExpression((UnaryExpression) expression, context, dataEntrySupplier);
             case FIELD:
